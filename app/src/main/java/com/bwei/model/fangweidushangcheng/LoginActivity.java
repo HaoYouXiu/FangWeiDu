@@ -6,7 +6,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class LoginActivity extends AppCompatActivity {
+import com.bwei.model.fangweidushangcheng.mvp.LoginPresenter;
+import com.bwei.model.fangweidushangcheng.mvp.view.LoginView;
+
+public class LoginActivity extends AppCompatActivity implements LoginView{
 
     private EditText loginName, loginPassword;
     private CheckBox loginBox;
@@ -19,6 +22,13 @@ public class LoginActivity extends AppCompatActivity {
 
         //初始化控件
         initView();
+        initData();
+
+        LoginPresenter loginPresenter = new LoginPresenter(this);
+
+    }
+
+    private void initData() {
 
     }
 
@@ -28,5 +38,15 @@ public class LoginActivity extends AppCompatActivity {
         loginBox = (CheckBox) findViewById(R.id.login_box);
         loginRegister = (TextView) findViewById(R.id.login_register);
         loginEnter = (TextView) findViewById(R.id.login_enter);
+    }
+
+    @Override
+    public String LoginSuccess(String success) {
+        return null;
+    }
+
+    @Override
+    public String onFail(String fail) {
+        return null;
     }
 }

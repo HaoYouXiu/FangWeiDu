@@ -6,4 +6,6 @@ package com.bwei.model.fangweidushangcheng.mvp;
  * function:
  */
 public class LoginModel {
+
+
 }

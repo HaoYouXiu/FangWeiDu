@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <stroke android:color="#ffffff"
-        android:width="2dp"
-        />
+    <item android:drawable="@drawable/check_false1" />
+   <item android:drawable="@drawable/check_true1" android:state_checked="true"/>
 
-</shape>
+</selector>

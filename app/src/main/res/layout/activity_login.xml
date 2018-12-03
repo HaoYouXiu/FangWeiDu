@@ -27,13 +27,12 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="36dp"
             android:layout_toRightOf="@id/login_phone_phone"
-            android:background=""
-            android:hint="手机号"
-            android:textColorHint="#fff"
-            android:textColor="#fff"
-            android:textSize="14dp"
+            android:background="@null"
             android:gravity="center_vertical"
-            />
+            android:hint="手机号"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="14dp" />
 
         <View
             android:layout_width="match_parent"
@@ -67,11 +66,11 @@
             android:layout_marginRight="36dp"
             android:layout_toRightOf="@id/login_lock"
             android:background="@null"
+            android:gravity="center_vertical"
             android:hint="登录密码"
-            android:textColorHint="#fff"
-            android:textSize="14dp"
             android:textColor="#fff"
-            android:gravity="center_vertical"/>
+            android:textColorHint="#fff"
+            android:textSize="14dp" />
 
         <ImageView
             android:layout_width="24dp"
@@ -102,10 +101,9 @@
             android:id="@+id/login_box"
             android:layout_width="14dp"
             android:layout_height="14dp"
+            android:background="@null"
             android:button="@null"
-            android:gravity="center"
-            android:background="@drawable/shape_login_box"
-            />
+            android:drawableLeft="@drawable/shape_login_box" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -114,8 +112,7 @@
             android:layout_toRightOf="@id/login_box"
             android:text="记住密码"
             android:textColor="#ffffff"
-            android:textSize="14dp"
-            />
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/login_register"
