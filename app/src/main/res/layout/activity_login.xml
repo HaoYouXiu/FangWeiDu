@@ -32,7 +32,8 @@
             android:hint="手机号"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:textCursorDrawable="@drawable/shape_login_edit"/>
 
         <View
             android:layout_width="match_parent"
@@ -70,9 +71,11 @@
             android:hint="登录密码"
             android:textColor="#fff"
             android:textColorHint="#fff"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:textCursorDrawable="@drawable/shape_login_edit"/>
 
         <ImageView
+            android:id="@+id/login_conceal"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_alignParentRight="true"
@@ -95,24 +98,18 @@
         android:layout_below="@id/login_mima"
         android:layout_marginLeft="36dp"
         android:layout_marginRight="36dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        >
 
         <CheckBox
             android:id="@+id/login_box"
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:background="@null"
-            android:button="@null"
-            android:drawableLeft="@drawable/shape_login_box" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/login_box"
+            android:buttonTint="#ffffff"
             android:text="记住密码"
             android:textColor="#ffffff"
-            android:textSize="14dp" />
+           />
 
         <TextView
             android:id="@+id/login_register"
@@ -121,7 +118,8 @@
             android:layout_alignParentRight="true"
             android:text="快速注册"
             android:textColor="#ffffff"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            />
     </RelativeLayout>
 
     <TextView

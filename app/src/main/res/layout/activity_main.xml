@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.bwei.model.fangweidushangcheng.Adapter.NoScrollViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/radio"
+        />
+
+        <RadioGroup
+            android:id="@+id/radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:background="@mipmap/rectangle6"
+            >
+            <RadioButton
+                android:id="@+id/fragment_home"
+                android:layout_width="26dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:layout_marginTop="25dp"
+                android:drawableTop="@drawable/shape_fragment_home"
+                />
+
+            <RadioButton
+                android:id="@+id/fragment_circle"
+                android:layout_width="26dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:layout_marginTop="25dp"
+                android:drawableTop="@drawable/shape_fragment_circle"
+                android:gravity="center"
+                android:paddingRight="5dp"/>
+
+            <RadioButton
+                android:id="@+id/fragment_shoppingcart"
+                android:layout_width="26dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/commom_tab_btn_shoppingcart_n_hdpi"/>
+
+            <RadioButton
+                android:id="@+id/fragment_list"
+                android:layout_width="26dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/shape_fragment_list"
+                android:layout_marginTop="25dp"
+                android:paddingLeft="5dp"/>
+
+            <RadioButton
+                android:id="@+id/fragment_my"
+                android:layout_width="26dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/shape_fragment_my"
+                android:layout_marginTop="25dp"/>
+        </RadioGroup>
+</RelativeLayout>
