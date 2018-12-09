@@ -3,7 +3,7 @@ package com.bwei.model.fangweidushangcheng.bean;
 /**
  * date:2018/12/4
  * author:郝仁（Thinkpad)
- * function:
+ * function:注册bean
  */
 public class RegisterBean {
 

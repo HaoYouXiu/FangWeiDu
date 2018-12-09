@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.bwei.model.fangweidushangcheng.Util.LogUtil;
 import com.bwei.model.fangweidushangcheng.net.OkHttpPost;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.util.HashMap;
 
@@ -21,6 +22,7 @@ public class App extends Application{
     public void onCreate() {
         super.onCreate();
         scontext = this;
+        Fresco.initialize( this );
         LogUtil.init();
         initHttpHeader();
     }

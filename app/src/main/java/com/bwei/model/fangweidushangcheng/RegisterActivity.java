@@ -1,7 +1,8 @@
 package com.bwei.model.fangweidushangcheng;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.HideReturnsTransformationMethod;
@@ -13,14 +14,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bwei.model.fangweidushangcheng.mvp.OnPresenter;
-import com.bwei.model.fangweidushangcheng.mvp.view.OnView;
+import com.bwei.model.fangweidushangcheng.mvp.LoginPresenter;
+import com.bwei.model.fangweidushangcheng.mvp.view.LoginView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class RegisterActivity extends AppCompatActivity implements OnView{
+public class RegisterActivity extends AppCompatActivity implements LoginView {
 
 
     @BindView(R.id.register_conceal)
@@ -51,7 +52,9 @@ public class RegisterActivity extends AppCompatActivity implements OnView{
     TextView registerLogin;
     @BindView(R.id.register_enter)
     TextView registerEnter;
-    private OnPresenter mPresenter;
+    private LoginPresenter mPresenter;
+    private String mUserName;
+    private String mPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -62,7 +65,8 @@ public class RegisterActivity extends AppCompatActivity implements OnView{
         //显示隐藏密码
         registerPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
 
-        mPresenter = new OnPresenter(this);
+        mPresenter = new LoginPresenter(this);
+
     }
 
     @OnClick(R.id.register_phone_phone)
@@ -114,9 +118,9 @@ public class RegisterActivity extends AppCompatActivity implements OnView{
 
     @OnClick(R.id.register_enter)
     public void onRegisterEnterClicked() {
-        String userName = registerName.getText().toString().trim();
-        String password = registerPassword.getText().toString();
-        mPresenter.register(userName,password);
+        mUserName = registerName.getText().toString().trim();
+        mPassword = registerPassword.getText().toString();
+        mPresenter.register( mUserName, mPassword );
 
     }
 
@@ -139,10 +143,12 @@ public class RegisterActivity extends AppCompatActivity implements OnView{
 
     @Override
     public void registerSuccess(String registersuccess) {
-        Toast.makeText(this, "注册成功，直接登录", Toast.LENGTH_SHORT).show();
-       Toast.makeText(this, registersuccess, Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-        startActivity(intent);
+        Toast.makeText(this, registersuccess, Toast.LENGTH_SHORT).show();
+        //传值
+        Intent intent = new Intent();
+        intent.putExtra("phone", mUserName);
+        intent.putExtra( "pass",mPassword );
+        setResult(RESULT_OK, intent);
         finish();
     }
 

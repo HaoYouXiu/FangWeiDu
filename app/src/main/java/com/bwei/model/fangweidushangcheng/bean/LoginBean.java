@@ -3,7 +3,7 @@ package com.bwei.model.fangweidushangcheng.bean;
 /**
  * date:2018/12/3
  * author:郝仁（Thinkpad)
- * function:
+ * function:登录bean
  */
 public class LoginBean {
 

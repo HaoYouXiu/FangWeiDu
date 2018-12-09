@@ -16,7 +16,7 @@ public class NoScrollViewPager extends ViewPager {
 
     private boolean isScroll = false;
 
-    public NoScrollViewPager(@NonNull Context context) {
+    public NoScrollViewPager(@NonNull Context context){
         super( context );
     }
 

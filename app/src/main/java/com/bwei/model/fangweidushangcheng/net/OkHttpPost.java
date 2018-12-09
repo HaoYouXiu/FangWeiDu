@@ -37,7 +37,7 @@ public class OkHttpPost {
         builder.readTimeout(3000, TimeUnit.MILLISECONDS);
         //添加请求头
         builder.addInterceptor(new OkHeaderInterceptor(headers));
-        //添加log日志
+        //添加log日志s
         builder.addInterceptor(new OkLogInterceptor());
         okHttpClient = builder.build();
     }

@@ -1,10 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@mipmap/my_background">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="my"/>
-</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="142dp"
+        android:background="@drawable/shape_my_background"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="我是吃不胖的小姐姐"
+            android:textColor="#666666"
+            android:textSize="14dp" />
+
+        <RelativeLayout
+            android:id="@+id/my_personaldata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp">
+            <!--namecard名片-->
+            <ImageView
+                android:id="@+id/my_namecard"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="24dp"
+                android:src="@mipmap/my_icon_information_n_xxhdpi" />
+
+            <TextView
+                android:id="@+id/my_person"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/my_namecard"
+                android:text="个人资料"
+                android:textColor="#666666"
+                android:textSize="14dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/my_person"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/my_namecard"
+                android:background="#ededed" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_mcircle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+            <!--circle圈子-->
+            <ImageView
+                android:id="@+id/my_mycircle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="24dp"
+                android:src="@mipmap/my_icon_circle_n_xxhdpi" />
+
+            <TextView
+                android:id="@+id/my_circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/my_mycircle"
+                android:text="我的圈子"
+                android:textColor="#666666"
+                android:textSize="14dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/my_circle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/my_mycircle"
+                android:background="#ededed" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_mfoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+            <ImageView
+                android:id="@+id/my_myfoot"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="24dp"
+                android:src="@mipmap/my_icon_foot_n_xxhdpi" />
+
+            <TextView
+                android:id="@+id/my_foot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/my_myfoot"
+                android:text="我的足记"
+                android:textColor="#666666"
+                android:textSize="14dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/my_foot"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/my_myfoot"
+                android:background="#ededed" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+            <!--wallet钱包-->
+            <ImageView
+                android:id="@+id/my_mywallet"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="24dp"
+                android:src="@mipmap/my_icon_wallet_n_xxhdpi" />
+
+            <TextView
+                android:id="@+id/my_wallet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/my_mywallet"
+                android:text="我的钱包"
+                android:textColor="#666666"
+                android:textSize="14dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/my_wallet"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/my_mywallet"
+                android:background="#ededed" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_maddres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+            <ImageView
+                android:id="@+id/my_myaddress"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="24dp"
+                android:src="@mipmap/my_icon_address_n_xxhdpi" />
+
+            <TextView
+                android:id="@+id/my_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/my_myaddress"
+                android:text="我的收获地址"
+                android:textColor="#666666"
+                android:textSize="14dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/my_address"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/my_myaddress"
+                android:background="#ededed" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--icon头像短语-->
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/my_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="102dp"
+        android:visibility="visible"
+        app:roundAsCircle="true" />
+
+</RelativeLayout>

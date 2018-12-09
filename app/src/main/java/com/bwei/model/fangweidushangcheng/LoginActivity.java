@@ -3,6 +3,7 @@ package com.bwei.model.fangweidushangcheng;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
@@ -15,15 +16,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bwei.model.fangweidushangcheng.Util.ToasUtil;
-import com.bwei.model.fangweidushangcheng.mvp.OnPresenter;
-import com.bwei.model.fangweidushangcheng.mvp.view.OnView;
+import com.bwei.model.fangweidushangcheng.mvp.LoginPresenter;
+import com.bwei.model.fangweidushangcheng.mvp.view.LoginView;
 
-public class LoginActivity extends AppCompatActivity implements OnView {
+public class LoginActivity extends AppCompatActivity implements LoginView {
 
     private EditText loginName, loginPassword;
     private CheckBox loginBox;
     private TextView loginRegister, loginEnter;
-    private OnPresenter mPresenter;
+    private LoginPresenter mPresenter;
     private ImageView loginConceal;
     private boolean ishide = true;
     private SharedPreferences loginSp;
@@ -38,7 +39,7 @@ public class LoginActivity extends AppCompatActivity implements OnView {
 
         initListener();
 
-        mPresenter = new OnPresenter(this);
+        mPresenter = new LoginPresenter(this);
 
     }
 
@@ -63,6 +64,7 @@ public class LoginActivity extends AppCompatActivity implements OnView {
                 String password = loginPassword.getText().toString();
 
                 mPresenter.login(userName, password);
+
                 if (loginBox.isChecked()){
                     SharedPreferences.Editor editor = loginSp.edit();
                     editor.putString("userName", userName);
@@ -77,7 +79,6 @@ public class LoginActivity extends AppCompatActivity implements OnView {
                 }
             }
         });
-
 
 
     }
@@ -111,8 +112,9 @@ public class LoginActivity extends AppCompatActivity implements OnView {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-                finish();
+                //0:请求码，注册返回值
+                startActivityForResult(intent,0);
+
             }
         });
 
@@ -120,6 +122,19 @@ public class LoginActivity extends AppCompatActivity implements OnView {
         initJzmima();
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult( requestCode, resultCode, data );
+        //resultCode == RESULT_OK：代表注册成功回来
+        if (requestCode == 0 && resultCode == RESULT_OK){
+            if (data != null){
+                String phone = data.getStringExtra( "phone" );
+                String pass = data.getStringExtra( "pass" );
+                loginName.setText( phone );
+                loginPassword.setText( pass );
+            }
+        }
+    }
 
     @Override
     public void LoginSuccess(String success) {

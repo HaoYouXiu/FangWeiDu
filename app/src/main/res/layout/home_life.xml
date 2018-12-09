@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/shape_home_rec"
+    >
+
+    <ImageView
+        android:id="@+id/life_image"
+        android:layout_width="151dp"
+        android:layout_height="174dp"
+        />
+
+    <TextView
+        android:id="@+id/life_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#666666"
+        android:textSize="12dp"
+        android:text="名字"
+        />
+    <TextView
+        android:id="@+id/life_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#666666"
+        android:textSize="12dp"
+        android:text="钱"
+        />
+</LinearLayout>

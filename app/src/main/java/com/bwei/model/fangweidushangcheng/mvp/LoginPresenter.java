@@ -1,29 +1,29 @@
 package com.bwei.model.fangweidushangcheng.mvp;
 
-import com.bwei.model.fangweidushangcheng.callback.HttpCallBack;
+import com.bwei.model.fangweidushangcheng.mvp.callback.LoginCallBack;
 import com.bwei.model.fangweidushangcheng.mvp.model.LoginModel;
 import com.bwei.model.fangweidushangcheng.mvp.model.RegisterModel;
-import com.bwei.model.fangweidushangcheng.mvp.view.OnView;
+import com.bwei.model.fangweidushangcheng.mvp.view.LoginView;
 
 /**
  * date:2018/12/1
  * author:郝仁（Thinkpad)
  * function:
  */
-public class OnPresenter {
+public class LoginPresenter {
 
     private LoginModel mLoginModel;
     private RegisterModel mRegisterModel;
-    private OnView mLoginView;
+    private LoginView mLoginView;
 
-    public OnPresenter(OnView loginView) {
+    public LoginPresenter(LoginView loginView) {
         mLoginView = loginView;
         mLoginModel = new LoginModel();
         mRegisterModel = new RegisterModel();
     }
 
     public void login(String userName, String password) {
-        mLoginModel.login(userName, password, new HttpCallBack() {
+        mLoginModel.login(userName, password, new LoginCallBack() {
 
             @Override
             public void LoginSuccess(String success) {
@@ -43,7 +43,7 @@ public class OnPresenter {
     }
 
     public void register(String userName, String password) {
-        mRegisterModel.register(userName, password, new HttpCallBack() {
+        mRegisterModel.register(userName, password, new LoginCallBack() {
             @Override
             public void LoginSuccess(String success) {
 

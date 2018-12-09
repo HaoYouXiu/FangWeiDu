@@ -9,7 +9,7 @@ import java.util.List;
  * author:郝仁（Thinkpad)
  * function:
  */
-public interface OnView {
+public interface LoginView {
     void LoginSuccess(String success);
     void registerSuccess(String registersuccess);
     void onFail(String fail);

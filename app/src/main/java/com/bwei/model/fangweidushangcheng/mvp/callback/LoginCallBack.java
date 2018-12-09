@@ -1,15 +1,11 @@
-package com.bwei.model.fangweidushangcheng.callback;
-
-import com.bwei.model.fangweidushangcheng.bean.LoginBean;
-
-import java.util.List;
+package com.bwei.model.fangweidushangcheng.mvp.callback;
 
 /**
  * date:2018/12/1
  * author:郝仁（Thinkpad)
  * function:
  */
-public interface HttpCallBack {
+public interface LoginCallBack {
 
     void LoginSuccess(String success);
     void registerSuccess(String registersuccess);
