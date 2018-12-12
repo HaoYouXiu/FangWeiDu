@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="24dp"
+    android:layout_marginRight="24dp"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical"
+    android:background="@drawable/shape_circle"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/circleone_iocn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/circleone_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/circleone_iocn"
+            android:text="网名"
+            android:textColor="#666666"
+            android:textSize="14dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/circleone_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="日期"
+            android:textColor="#666666"
+            android:textSize="14dp"
+            android:layout_marginRight="20dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/circleone_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="内容"
+        android:layout_margin="10dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/circleone_image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/circleone_image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/view_god"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/common_btn_prise_n_hdpi"
+            android:visibility="visible"
+            android:layout_toLeftOf="@id/view_num"
+            android:layout_marginRight="10dp"
+            />
+        <ImageView
+            android:id="@+id/view_good"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/common_btn_prise_s_hdpi"
+            android:visibility="gone"
+            android:layout_toLeftOf="@id/view_num"
+            android:layout_marginRight="10dp"/>
+        <TextView
+            android:id="@+id/view_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_alignParentRight="true"
+            android:textColor="#666666"
+            android:textSize="12dp"
+            android:layout_marginRight="24dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

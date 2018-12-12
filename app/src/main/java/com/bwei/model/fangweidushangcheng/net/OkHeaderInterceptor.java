@@ -1,10 +1,11 @@
 package com.bwei.model.fangweidushangcheng.net;
 
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import android.content.Context;
+import android.content.SharedPreferences;
 
+import com.bwei.model.fangweidushangcheng.app.App;
+
+import java.io.IOException;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -16,27 +17,22 @@ import okhttp3.Response;
  * 这个里面主要的功能是让我们添加公共的请求头
  */
 public class OkHeaderInterceptor implements Interceptor {
-    private Map<String, String> headers;
 
-    public OkHeaderInterceptor(Map<String, String> headers) {
-        this.headers = headers;
+    SharedPreferences mSharedPreferences = App.scontext.getSharedPreferences( "tou", Context.MODE_PRIVATE);
 
-        this.headers = headers;
+    public OkHeaderInterceptor(){
+
     }
-
     @Override
     public Response intercept(Chain chain) throws IOException {
 
         Request request = chain.request();
         Request.Builder builder = request.newBuilder();
-        if (headers != null){
-            Set set = headers.keySet();
-            Iterator<String> iterator = set.iterator();
-            while (iterator.hasNext()){
-                String next = iterator.next();
-                builder.addHeader(next, headers.get(next));
-            }
-        }
+        builder.addHeader("version","version1.0");
+        builder.addHeader("platform","android");
+        builder.addHeader("sessionId", (String) mSharedPreferences.getString(Constant.TOKEN,"") );
+        builder.addHeader("userId", (String) mSharedPreferences.getString(Constant.USER_ID,"") );
+
         request = builder.build();
         return chain.proceed(request);
     }

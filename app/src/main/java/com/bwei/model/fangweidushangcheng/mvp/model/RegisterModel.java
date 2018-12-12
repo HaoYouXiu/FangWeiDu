@@ -33,7 +33,7 @@ public class RegisterModel {
         map.put( "phone", userName );
         map.put( "pwd", password );
 
-        OkHttpPost.EnestenPost( HttpUrlUtil.REGISTER_URL, map, new OkhttpCallBack( new HttpDataListener() {
+        OkHttpPost.enqueuepost( HttpUrlUtil.REGISTER_URL, map, new OkhttpCallBack( new HttpDataListener() {
             @Override
             public void httpSuccess(String httpSuccess) {
                 Gson gson = new Gson();

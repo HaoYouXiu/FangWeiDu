@@ -50,7 +50,7 @@ public class HomeModel {
 //                } );
 //            }
 //        } );
-        OkHttpPost.EnestenGet(HttpUrlUtil.BANNER_URL, new OkhttpCallBack(new HttpDataListener() {
+        OkHttpPost.enqueueGet(HttpUrlUtil.BANNER_URL, null,  new OkhttpCallBack(new HttpDataListener() {
             @Override
             public void httpSuccess(String httpSuccess) {
                 Gson gson = new Gson();

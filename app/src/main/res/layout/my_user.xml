@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="朕的资料"
+        android:textColor="#666666"
+        android:textSize="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape_my_user">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/user_tou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:text="朕的头像"
+                android:textColor="#666666"
+                android:textSize="14dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/user_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
+                app:roundAsCircle="true" />
+
+            <view
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/user_tou" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/user_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:text="朕的昵称"
+                android:textColor="#666666"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/user_passwrod"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:gravity="right"
+                android:text="名字"
+                android:textColor="#666666"
+                android:textSize="14dp" />
+
+            <view
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/user_pass" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/user_ming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:text="朕的密码"
+                android:textColor="#666666"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:gravity="right"
+                android:text="123434"
+                android:textColor="#666666"
+                android:textSize="14dp" />
+
+            <view
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/user_ming" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

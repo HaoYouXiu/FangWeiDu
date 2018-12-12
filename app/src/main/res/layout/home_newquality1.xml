@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@mipmap/bitmap"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/fragment_hotproducts"
+            android:gravity="center"
+            android:text="热销新品"
+            android:textColor="#ff7f57"
+            android:textSize="16dp" />
+        <!--hotproducts热销新品-->
+        <ImageView
+            android:id="@+id/fragment_hotproducts"
+            android:layout_width="24dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="24dp"
+            android:src="@mipmap/common_btn_more_yellow_n_xxhdpi" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/fragment_cy_newquality"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="10dp" />
+</LinearLayout>

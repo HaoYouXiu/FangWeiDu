@@ -16,7 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bwei.model.fangweidushangcheng.Util.ToasUtil;
-import com.bwei.model.fangweidushangcheng.mvp.LoginPresenter;
+import com.bwei.model.fangweidushangcheng.bean.LoginBean;
+import com.bwei.model.fangweidushangcheng.mvp.presenter.LoginPresenter;
 import com.bwei.model.fangweidushangcheng.mvp.view.LoginView;
 
 public class LoginActivity extends AppCompatActivity implements LoginView {
@@ -137,8 +138,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     }
 
     @Override
-    public void LoginSuccess(String success) {
-        ToasUtil.showToas( success );
+    public void LoginSuccess(LoginBean success) {
+        ToasUtil.showToas( ""+success );
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
         finish();

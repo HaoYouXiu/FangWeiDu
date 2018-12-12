@@ -1,5 +1,6 @@
-package com.bwei.model.fangweidushangcheng.mvp;
+package com.bwei.model.fangweidushangcheng.mvp.presenter;
 
+import com.bwei.model.fangweidushangcheng.bean.LoginBean;
 import com.bwei.model.fangweidushangcheng.mvp.callback.LoginCallBack;
 import com.bwei.model.fangweidushangcheng.mvp.model.LoginModel;
 import com.bwei.model.fangweidushangcheng.mvp.model.RegisterModel;
@@ -26,7 +27,7 @@ public class LoginPresenter {
         mLoginModel.login(userName, password, new LoginCallBack() {
 
             @Override
-            public void LoginSuccess(String success) {
+            public void LoginSuccess(LoginBean success) {
                 mLoginView.LoginSuccess( success );
             }
 
@@ -45,7 +46,7 @@ public class LoginPresenter {
     public void register(String userName, String password) {
         mRegisterModel.register(userName, password, new LoginCallBack() {
             @Override
-            public void LoginSuccess(String success) {
+            public void LoginSuccess(LoginBean success) {
 
             }
 

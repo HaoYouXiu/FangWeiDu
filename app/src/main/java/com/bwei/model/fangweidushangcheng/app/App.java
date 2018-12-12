@@ -25,6 +25,7 @@ public class App extends Application{
         Fresco.initialize( this );
         LogUtil.init();
         initHttpHeader();
+
     }
 
     private void initHttpHeader() {
@@ -32,6 +33,6 @@ public class App extends Application{
         hashMaps.put("token","this is token");
         hashMaps.put("version","version1.0");
         hashMaps.put("platform","android");
-        OkHttpPost.init(hashMaps);
+        OkHttpPost.init();
     }
 }

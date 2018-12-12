@@ -10,7 +10,7 @@ import java.util.List;
  * function:
  */
 public interface LoginView {
-    void LoginSuccess(String success);
+    void LoginSuccess(LoginBean success);
     void registerSuccess(String registersuccess);
     void onFail(String fail);
 

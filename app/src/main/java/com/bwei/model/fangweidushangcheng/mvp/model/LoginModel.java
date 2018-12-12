@@ -33,7 +33,7 @@ public class LoginModel {
         map.put( "phone", userName );
         map.put( "pwd", password );
 
-        OkHttpPost.EnestenPost( HttpUrlUtil.LOGIN_URL, map, new OkhttpCallBack( new HttpDataListener() {
+        OkHttpPost.enqueuepost( HttpUrlUtil.LOGIN_URL, map, new OkhttpCallBack( new HttpDataListener() {
             @Override
             public void httpSuccess(String httpSuccess) {
                 Gson gson = new Gson();
@@ -41,7 +41,7 @@ public class LoginModel {
                 String status = loginBean.getStatus();
                 String message = loginBean.getMessage();
                 if (status.equals( "0000" )) {
-                    loginCallBack.LoginSuccess(message);
+                    loginCallBack.LoginSuccess( loginBean );
                 } else {
                     loginCallBack.onFail(message);
                 }

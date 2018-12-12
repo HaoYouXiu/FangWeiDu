@@ -1,26 +1,1 @@
-package com.bwei.model.fangweidushangcheng.fragment;
-
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.bwei.model.fangweidushangcheng.R;
-
-/**
- * date:2018/12/4
- * author:郝仁（Thinkpad)
- * function:
- */
-public class CircleFragment extends Fragment {
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_circle, container, false);
-        return view;
-    }
-}
+package com.bwei.model.fangweidushangcheng.fragment;import android.os.Bundle;import android.support.annotation.NonNull;import android.support.annotation.Nullable;import android.support.v4.app.Fragment;import android.support.v7.widget.LinearLayoutManager;import android.support.v7.widget.RecyclerView;import android.view.LayoutInflater;import android.view.View;import android.view.ViewGroup;import com.bwei.model.fangweidushangcheng.Adapter.CiricleRecyclerAdapter;import com.bwei.model.fangweidushangcheng.R;import com.bwei.model.fangweidushangcheng.bean.CircleBean;import com.bwei.model.fangweidushangcheng.mvp.presenter.Ciriclepresenter;import com.bwei.model.fangweidushangcheng.mvp.view.CiricleView;import java.util.List;import butterknife.BindView;import butterknife.ButterKnife;import butterknife.OnClick;import butterknife.Unbinder;/** * date:2018/12/4 * author:郝仁（Thinkpad) * function: */public class CircleFragment extends Fragment implements CiricleView{    @BindView(R.id.circleone_recycler)    RecyclerView circleoneRecycler;    Unbinder unbinder;    private Ciriclepresenter mCiriclepresenter;    @Nullable    @Override    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {        View view = inflater.inflate( R.layout.fragment_circle, container, false );        unbinder = ButterKnife.bind( this, view );        return view;    }    @Override    public void onActivityCreated(@Nullable Bundle savedInstanceState) {        super.onActivityCreated( savedInstanceState );        LinearLayoutManager manager = new LinearLayoutManager( getContext() );        manager.setOrientation( LinearLayoutManager.VERTICAL);        circleoneRecycler.setLayoutManager( manager );        mCiriclepresenter = new Ciriclepresenter(this);        mCiriclepresenter.ciricle("1","5");    }    @Override    public void onDestroyView() {        super.onDestroyView();        unbinder.unbind();    }    @OnClick(R.id.circleone_recycler)    public void onViewClicked() {    }    @Override    public void cririSuccess(List<CircleBean.ResultBean> success) {        CiricleRecyclerAdapter adapter = new CiricleRecyclerAdapter( getContext(), success );        circleoneRecycler.setAdapter( adapter );    }    @Override    public void cririFail(String fail) {    }}

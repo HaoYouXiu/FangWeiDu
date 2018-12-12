@@ -1,8 +1,6 @@
 package com.bwei.model.fangweidushangcheng;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.HideReturnsTransformationMethod;
@@ -14,7 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bwei.model.fangweidushangcheng.mvp.LoginPresenter;
+import com.bwei.model.fangweidushangcheng.bean.LoginBean;
+import com.bwei.model.fangweidushangcheng.mvp.presenter.LoginPresenter;
 import com.bwei.model.fangweidushangcheng.mvp.view.LoginView;
 
 import butterknife.BindView;
@@ -137,7 +136,7 @@ public class RegisterActivity extends AppCompatActivity implements LoginView {
     }
 
     @Override
-    public void LoginSuccess(String success) {
+    public void LoginSuccess(LoginBean success) {
 
     }
 

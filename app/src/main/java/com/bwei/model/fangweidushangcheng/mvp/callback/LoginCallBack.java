@@ -1,5 +1,7 @@
 package com.bwei.model.fangweidushangcheng.mvp.callback;
 
+import com.bwei.model.fangweidushangcheng.bean.LoginBean;
+
 /**
  * date:2018/12/1
  * author:郝仁（Thinkpad)
@@ -7,7 +9,7 @@ package com.bwei.model.fangweidushangcheng.mvp.callback;
  */
 public interface LoginCallBack {
 
-    void LoginSuccess(String success);
+    void LoginSuccess(LoginBean success);
     void registerSuccess(String registersuccess);
     void onFail(String fail);
 }

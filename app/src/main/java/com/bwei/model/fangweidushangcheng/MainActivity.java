@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     @OnClick({R.id.view_pager, R.id.fragment_home, R.id.fragment_circle, R.id.fragment_shoppingcart, R.id.fragment_list, R.id.fragment_my, R.id.radio})
     public void onViewClicked(View view) {
         switch (view.getId()) {
