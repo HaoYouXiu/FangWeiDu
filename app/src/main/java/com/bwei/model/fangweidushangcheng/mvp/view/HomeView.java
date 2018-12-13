@@ -13,5 +13,6 @@ import java.util.List;
 public interface HomeView {
     void HomeSuccess(List<BannerBean.ResultBean> success);
     void RcHomeSuccess(HomeBean.ResultBean commodityList);
+    void HomeHotpreSuccess(List success);
     void HomeFail(String fail);
 }

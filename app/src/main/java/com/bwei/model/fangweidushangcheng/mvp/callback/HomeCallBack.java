@@ -14,5 +14,6 @@ public interface HomeCallBack {
 
     void HomeSuccess(List<BannerBean.ResultBean> success);
     void RcHomeSuccess(HomeBean.ResultBean commodityList);
+    void HomeHotpreSuccess(List success);
     void HomeFail(String fail);
 }

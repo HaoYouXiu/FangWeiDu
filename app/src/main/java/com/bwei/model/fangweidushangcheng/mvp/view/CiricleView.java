@@ -10,6 +10,6 @@ import java.util.List;
  * function:
  */
 public interface CiricleView {
-    void cririSuccess(List<CircleBean.ResultBean> success);
+    void cririSuccess(List success);
     void cririFail(String fail);
 }

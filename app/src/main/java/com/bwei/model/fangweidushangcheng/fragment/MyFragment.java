@@ -5,14 +5,21 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.bwei.model.fangweidushangcheng.R;
+import com.bwei.model.fangweidushangcheng.fragment.event.AddEvent;
+import com.bwei.model.fangweidushangcheng.fragment.myfragment.MyAddresFragement;
+import com.bwei.model.fangweidushangcheng.fragment.myfragment.MyCircleFragement;
+import com.bwei.model.fangweidushangcheng.fragment.myfragment.MyFootFragement;
+import com.bwei.model.fangweidushangcheng.fragment.myfragment.MyMoneyFragement;
+import com.bwei.model.fangweidushangcheng.fragment.myfragment.MyUserFragement;
 import com.facebook.drawee.view.SimpleDraweeView;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -74,15 +81,20 @@ public class MyFragment extends Fragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.my_personaldata:
-
+                  //新建fragment
+                EventBus.getDefault().post( new AddEvent( new MyUserFragement() ) );
                 break;
             case R.id.my_mcircle:
+                EventBus.getDefault().post( new AddEvent( new MyCircleFragement()) );
                 break;
             case R.id.my_mfoot:
+                EventBus.getDefault().post( new AddEvent( new MyFootFragement()) );
                 break;
             case R.id.my_money:
+                EventBus.getDefault().post( new AddEvent( new MyMoneyFragement()) );
                 break;
             case R.id.my_maddres:
+                EventBus.getDefault().post( new AddEvent( new MyAddresFragement()) );
                 break;
         }
     }

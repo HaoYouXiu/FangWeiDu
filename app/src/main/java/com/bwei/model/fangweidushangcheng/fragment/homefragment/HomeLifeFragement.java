@@ -1,4 +1,4 @@
-package com.bwei.model.fangweidushangcheng.fragment;
+package com.bwei.model.fangweidushangcheng.fragment.homefragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -21,6 +21,16 @@ import butterknife.Unbinder;
  * author:郝仁（Thinkpad)
  * function:
  */
-public class HomeNewFragement extends Fragment {
+public class HomeLifeFragement extends Fragment {
+
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate( R.layout.fragment_home_life, container, false );
+
+        return view;
+
+    }
 
 }

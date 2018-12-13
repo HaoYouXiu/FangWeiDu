@@ -31,6 +31,15 @@ public class CiricleRecyclerAdapter extends RecyclerView.Adapter<CiricleRecycler
         mList = list;
     }
 
+    public void setList(List<CircleBean.ResultBean> list) {
+        mList = list;
+    }
+
+    public void addList(List<CircleBean.ResultBean> list) {
+        mList.addAll(list);
+    }
+
+
     @NonNull
     @Override
     public ViewHodel onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {

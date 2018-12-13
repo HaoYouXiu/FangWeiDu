@@ -6,12 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.bwei.model.fangweidushangcheng.Adapter.NoScrollViewPager
-        android:id="@+id/view_pager"
+    <FrameLayout
+        android:id="@+id/fragment_Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/radio"
-        />
+       android:layout_marginBottom="-20dp">
+        <com.bwei.model.fangweidushangcheng.Adapter.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </FrameLayout>
+
 
         <RadioGroup
             android:id="@+id/radio"
@@ -26,6 +33,7 @@
                 android:layout_width="26dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:checked="true"
                 android:button="@null"
                 android:layout_marginTop="25dp"
                 android:drawableTop="@drawable/shape_fragment_home"

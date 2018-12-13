@@ -19,5 +19,4 @@ public class HttpUrlUtil {
     //圈子列表
     public static String CRICLE_URL = BASE_URL + "/circle/v1/findCircleList";
 
-//    http://172.17.8.100/small/circle/v1/findCircleList?page=1&count=5
 }

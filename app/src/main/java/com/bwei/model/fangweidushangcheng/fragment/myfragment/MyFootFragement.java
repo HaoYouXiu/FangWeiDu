@@ -1,4 +1,4 @@
-package com.bwei.model.fangweidushangcheng.fragment;
+package com.bwei.model.fangweidushangcheng.fragment.myfragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,9 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bwei.model.fangweidushangcheng.R;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +23,14 @@ import butterknife.Unbinder;
  * author:郝仁（Thinkpad)
  * function:
  */
-public class HomeNewFragement extends Fragment {
+public class MyFootFragement extends Fragment {
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate( R.layout.my_foot, container, false );
+
+        return view;
+    }
 
 }

@@ -25,10 +25,17 @@ import com.bwei.model.fangweidushangcheng.Adapter.NewQualityAdapter;
 import com.bwei.model.fangweidushangcheng.R;
 import com.bwei.model.fangweidushangcheng.bean.BannerBean;
 import com.bwei.model.fangweidushangcheng.bean.HomeBean;
+import com.bwei.model.fangweidushangcheng.fragment.event.AddEvent;
+import com.bwei.model.fangweidushangcheng.fragment.homefragment.HomeFashionFragment;
+import com.bwei.model.fangweidushangcheng.fragment.homefragment.HomeHotpreFragment;
+import com.bwei.model.fangweidushangcheng.fragment.homefragment.HomeLifeFragement;
+import com.bwei.model.fangweidushangcheng.fragment.myfragment.MyUserFragement;
 import com.bwei.model.fangweidushangcheng.mvp.presenter.HomePresenter;
 import com.bwei.model.fangweidushangcheng.mvp.view.HomeView;
 import com.zhouwei.mzbanner.MZBannerView;
 import com.zhouwei.mzbanner.holder.MZHolderCreator;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -127,6 +134,11 @@ public class HomeFragment extends Fragment implements HomeView {
         fragmentCyLife.setAdapter( liftAdapter );
     }
 
+    @Override
+    public void HomeHotpreSuccess(List success) {
+
+    }
+
 
     @Override
     public void HomeFail(String fail) {
@@ -149,12 +161,15 @@ public class HomeFragment extends Fragment implements HomeView {
             case R.id.home_head_seek:
                 break;
             case R.id.fragment_hotproducts:
+                EventBus.getDefault().post( new AddEvent( new HomeHotpreFragment() ) );
                 break;
             case R.id.fragment_fashion:
+                EventBus.getDefault().post( new AddEvent( new HomeHotpreFragment() ) );
                 break;
             case R.id.fragment_cy_sashion:
                 break;
             case R.id.fragment_Life:
+                EventBus.getDefault().post( new AddEvent( new HomeHotpreFragment()) );
                 break;
             case R.id.fragment_cy_Life:
                 break;

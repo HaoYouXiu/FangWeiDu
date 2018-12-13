@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    android:background="@drawable/shape_home_rec">
+
+    <ImageView
+        android:id="@+id/adapter_image"
+        android:layout_width="151dp"
+        android:layout_height="174dp"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:id="@+id/adapter_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="内容"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/adapter_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥109"
+            android:textColor="#ff0000"
+            android:textSize="14dp"
+            />
+        <TextView
+            android:id="@+id/adapter_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已售54件"
+            android:textColor="#666666"
+            android:textSize="10dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+</LinearLayout>
